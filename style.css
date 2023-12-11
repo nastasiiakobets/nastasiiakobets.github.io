@@ -1,0 +1,390 @@
+@import url("fonts/Jost/stylesheet.css");
+:root {
+    --background-color: rgb(217, 217, 217);
+    --top-background-color: rgb(30, 30, 30);
+    --text-color1: #000000;
+    --text-color2: #ffffff;
+}
+*{
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    background-color: var(--background-color);
+    background-image: url('images/back1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+a{
+    color: inherit;/*прибираємо фіолетовий колір посилань*/
+    text-decoration: none; /*Скасовуємо підкреслення у посилань*/
+}
+
+ul{
+    list-style-type: none;/*без крапочок*/
+    margin: 0;
+}
+/*------------------------------------*/
+header {
+    background-color: var(--top-background-color);
+    border-radius: 0 0 0 56px;
+    margin-left: 500px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*position: fixed;/*рухається
+    top:0;
+    right: 0;*/
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    color: var(--text-color2);
+    font-size: 23px;
+    padding: 0 30px 0 25px;
+    margin-left: 15px;
+}
+
+.nav-list li:first-child { /*відступ*/
+    margin-left: 150px;
+}
+.nav-list-link{
+    position: relative;
+}
+.nav-list-link:hover{/*зміна кольору при наведенні*/
+    color: var(--background-color);
+    transition: all .25s ease;
+}
+
+.nav-list-link::after{/*псевдоклас для полосочок знизу*/
+    content: "";
+    background: var(--background-color);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .25s ease;
+}
+.nav-list-link:hover::after{
+    transform: scaleX(1);
+}
+.logo-link{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.logo-img{
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--text-color2);
+    border-radius: 30px;
+    transition: all .25s ease;
+}
+
+.nav-list li:last-of-type a :hover{ /*зміна кольору іконки*/
+   background-color: var(--background-color);
+   border-radius: 30px;
+}
+/*------------------------------------*/
+.main{
+    font-size: 36px;
+    margin-top: 300px;
+    margin-left: 5%;
+    margin-bottom: 335px;
+    color: var(--text-color1);
+}
+
+.main p{
+    margin-bottom: 5px;
+}
+
+.hr-main{/*полосочка*/
+    width: 400px;
+    border: 1.5px solid var(--text-color1);
+    margin-top: -280px;
+    margin-bottom: 240px;
+    margin-left: 220px;
+}
+/*------------------------------------*/
+.info {
+    background-color: var(--top-background-color);
+    color: var(--text-color2);
+    font-size: 23px;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 56px;
+    height: 100vh;
+    display: flex;
+    position: relative; 
+}
+
+.info p {
+    margin-left: 85px;
+    margin-bottom: -15px;
+}
+
+.info b {
+    font-weight: 450;
+}
+
+.myphoto {
+    height: 600px;
+    padding: 80px 90px;
+    z-index: 2;
+}
+
+.rectangle {
+    box-sizing: border-box;
+    position: absolute;
+    height: 600px;
+    width: 480px;
+    background-color: var(--top-background-color);
+    border: 1px solid var(--background-color);
+    margin-left: 120px;
+    margin-top: 110px;
+    z-index: 1;
+}
+
+/*----------------рівень знань--------------------*/
+.level-block{
+    padding-top: 100px;
+    padding-bottom: 300px;
+    background-image: url('images/back2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.level1, .level2, .level3, .level4, .level5 {
+    transition: height 1s ease, width 1s ease;
+}
+.level-list{
+    padding-top: 100px;
+}
+.level1{
+    background-color: var(--top-background-color);
+    height: 30px;
+    width: 1000px;
+    border-radius: 16px;
+    margin-left: 250px;
+    width: 600px;
+}
+.level2{
+    background-color: var(--top-background-color);
+    height: 30px;
+    width: 1000px;
+    border-radius: 16px;
+    margin-top: 30px;
+    margin-left: 250px;
+    width: 300px;
+}
+.level3{
+    background-color: var(--top-background-color);
+    height: 30px;
+    width: 1000px;
+    border-radius: 16px;
+    margin-top: 30px;
+    margin-left: 250px;
+    width: 400px;
+}
+.level4{
+    background-color: var(--top-background-color);
+    height: 30px;
+    width: 1000px;
+    border-radius: 16px;
+    margin-top: 30px;
+    margin-left: 250px;
+    width: 200px;
+}
+.level5{
+    background-color: var(--top-background-color);
+    height: 30px;
+    width: 1000px;
+    border-radius: 16px;
+    margin-top: 30px;
+    margin-left: 250px;
+    width: 450px;
+}
+
+.h3-1{
+    margin-left: 700px;
+}
+.h3-2{
+    margin-left: 400px;
+}
+.h3-3{
+    margin-left: 500px;
+}
+.h3-4{
+    margin-left: 300px;
+}
+.h3-5{
+    margin-left: 550px;
+}
+
+h2{
+    text-align:center;
+    font-size: 28px;
+}
+/*------------------------------------*/
+.examples{
+    background-color: var(--top-background-color);
+    border-radius: 56px;
+    height: 765px;
+    padding-top: 35px;
+}
+
+.h2-examples{
+    color: var(--text-color2);
+}
+.display{
+    display: flex;
+}
+.display1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+.display2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.examp1{
+    width: 300px;
+    border-radius: 16px;
+    margin-left: 40px;
+}
+.examp1:hover, .examp2:hover, .examp3:hover, .examp4:hover, .examp5:hover, .examp6:hover{
+    transform: translate(-5px, -5px);
+    transition: all .30s ease;
+}
+.examp1:not(:hover),
+.examp2:not(:hover),
+.examp3:not(:hover),
+.examp4:not(:hover),
+.examp5:not(:hover),
+.examp6:not(:hover) {
+    transition: all .30s ease;
+}
+.examp2{
+    width: 340px;
+    border-radius: 16px;
+    margin-top: 30px;
+}
+.examp3{
+    width: 330px;
+    border-radius: 16px;
+}
+.examp4{
+    width: 330px;
+    border-radius: 16px;
+    margin-top: 30px;
+}
+.examp5{
+    width: 230px;
+    border-radius: 16px;
+    margin-left: 30px;
+}
+.examp6{
+    width: 310px;
+    border-radius: 16px;
+    margin-left: 30px;
+}
+/*------------------------------------*/
+.contacts{
+    background-image: url('images/back3.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 106px;
+}
+.contacts-info{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+.contacts h2{
+    padding-top: 50px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: left;
+    padding-left: 100px;
+}
+
+.contact-item{
+    border-radius: 44px;
+    color: var(--text-color2);
+    font-size: 28px;
+    padding: 0px 60px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-link img{
+    width: 100px;
+}
+.email{
+    margin-left: 100px;
+    background-color: var(--top-background-color);
+}
+.facebook{
+    margin-top: -40px;
+    margin-left: -400px;
+}
+.phone{
+    margin-left: 700px;
+    margin-top: 40px;
+    background-color: var(--top-background-color);
+}
+.instagram{
+    margin-left: 210px;
+    margin-top: 40px;
+    margin-right: 1000px;
+}
+.telegram{
+    margin-left: 500px;
+    margin-top: -70px;
+}
+/*-----------------подвал-------------------*/
+.hr-bottom{
+    border: 1.5px solid var(--text-color1);
+    width: 1300px;
+    margin-top: 0;
+}
+.bottom1{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+footer img{
+    width: 15px;
+}
+footer p{
+    text-align: right;
+    margin-right: 100px;
+    font-weight: 450;
+}
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color1);
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#topButton img{
+    width: 25px;
+    height: 20px;
+}
