@@ -52,15 +52,15 @@ document.addEventListener('DOMContentLoaded', function () {
             contacts.classList.remove('back3');
             contacts.classList.toggle('alt-back3');
 
-            striloczka.src = 'images/down-arrow.png';
+            striloczka.src = '/down-arrow.png';
 
-            c.src = 'images/c2.png';
+            c.src = '/c2.png';
 
-            facebook.src = 'images/facebook2.png';
+            facebook.src = '/facebook2.png';
 
-            instagram.src = 'images/instagram2.png';
+            instagram.src = '/instagram2.png';
 
-            telegram.src = 'images/telegram2.png';
+            telegram.src = '/telegram2.png';
         } else {
             root.style.setProperty('--background-color', 'rgb(217, 217, 217)');
             root.style.setProperty('--top-background-color', 'rgb(30, 30, 30)');
@@ -78,15 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
             contacts.classList.remove('back3');
             contacts.classList.toggle('alt-back3');
 
-            striloczka.src = 'images/striloczka.png';
+            striloczka.src = '/striloczka.png';
 
-            c.src = 'images/c.png';
+            c.src = '/c.png';
 
-            facebook.src = 'images/facebook.png';
+            facebook.src = '/facebook.png';
 
-            instagram.src = 'images/instagram.png';
+            instagram.src = '/instagram.png';
 
-            telegram.src = 'images/telegram.png';
+            telegram.src = '/telegram.png';
         }
     });
 });
