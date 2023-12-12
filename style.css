@@ -1,9 +1,11 @@
-@import url("/stylesheet.css");
+@import url("fonts/Jost/stylesheet.css");
 :root {
     --background-color: rgb(217, 217, 217);
     --top-background-color: rgb(30, 30, 30);
     --text-color1: #000000;
     --text-color2: #ffffff;
+    --red: rgb(91, 30, 27);
+    --dark:  rgb(30, 30, 30);
 }
 *{
     padding: 0;
@@ -15,37 +17,119 @@ body{
     margin: 0;
     font-family: 'Jost', sans-serif;
     background-color: var(--background-color);
-    background-image: url('/back1.png');
+    background-image: url('images/back1.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
-
+body.alternative-images {
+    background-image: url('images/back1_2.jpg');
+    background-size: 100%;
+}
+body.main-images{
+    background-image: url('images/back1.jpg');
+    background-size: 100%;
+}
 a{
     color: inherit;/*прибираємо фіолетовий колір посилань*/
-    text-decoration: none; /*Скасовуємо підкреслення у посилань*/
+    text-decoration: none; /*cкасовуємо підкреслення у посилань*/
 }
 
 ul{
     list-style-type: none;/*без крапочок*/
     margin: 0;
 }
+/*кнопка*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color:var(--red) ;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px rgb(91, 30, 27);
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
 /*------------------------------------*/
 header {
     background-color: var(--top-background-color);
     border-radius: 0 0 0 56px;
-    margin-left: 500px;
+    margin-left: 500px; /* You may need to adjust this value based on your layout */
     height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /*position: fixed;/*рухається
-    top:0;
-    right: 0;*/
 }
-.nav-list{
+
+.nav-container {
     display: flex;
     align-items: center;
 }
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.burger-icon {
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -.125em;
+}
+
 .nav-list li{
     color: var(--text-color2);
     font-size: 23px;
@@ -54,7 +138,7 @@ header {
 }
 
 .nav-list li:first-child { /*відступ*/
-    margin-left: 150px;
+    margin-left: 100px;
 }
 .nav-list-link{
     position: relative;
@@ -91,7 +175,7 @@ header {
     transition: all .25s ease;
 }
 
-.nav-list li:last-of-type a :hover{ /*зміна кольору іконки*/
+.dark-theme:last-of-type a :hover{ /*зміна кольору іконки*/
    background-color: var(--background-color);
    border-radius: 30px;
 }
@@ -110,12 +194,17 @@ header {
 
 .hr-main{/*полосочка*/
     width: 400px;
-    border: 1.5px solid var(--text-color1);
+    border: 1.5px solid var(--dark);
     margin-top: -280px;
     margin-bottom: 240px;
     margin-left: 220px;
 }
 /*------------------------------------*/
+.container {
+    position: relative;
+    height: 800px; /* Висота вашого контейнера .info */
+}
+
 .info {
     background-color: var(--top-background-color);
     color: var(--text-color2);
@@ -123,14 +212,15 @@ header {
     font-weight: 300;
     font-style: normal;
     border-radius: 56px;
-    height: 100vh;
+    height: 800px;
     display: flex;
-    position: relative; 
+    position: relative; /* Додано для явного вказівки позиціонування */
 }
 
 .info p {
     margin-left: 85px;
     margin-bottom: -15px;
+    margin-left: 30em;
 }
 
 .info b {
@@ -140,6 +230,7 @@ header {
 .myphoto {
     height: 600px;
     padding: 80px 90px;
+    position: absolute; /* Змінено на absolute */
     z-index: 2;
 }
 
@@ -159,58 +250,45 @@ header {
 .level-block{
     padding-top: 100px;
     padding-bottom: 300px;
-    background-image: url('/back2.png');
+    background-image: url('images/back2.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
 }
-.level1, .level2, .level3, .level4, .level5 {
-    transition: height 1s ease, width 1s ease;
+.level-block.alt-back2{
+    background-image: url('images/back2_2.jpg');
+    background-size: cover;
+}
+.level-block.back2{
+    background-image: url('images/back2.jpg');
+    background-size: cover;
 }
 .level-list{
     padding-top: 100px;
 }
-.level1{
-    background-color: var(--top-background-color);
+.level1, .level2, .level3, .level4, .level5 {
+    transition: height 1s ease, width 1s ease;
+    background-color: var(--dark);
     height: 30px;
     width: 1000px;
     border-radius: 16px;
     margin-left: 250px;
+    box-shadow: 10px 5px 5px gray;
+}
+.level2, .level3, .level4, .level5 {
+    margin-top: 30px;
+}
+.level1{
     width: 600px;
 }
 .level2{
-    background-color: var(--top-background-color);
-    height: 30px;
-    width: 1000px;
-    border-radius: 16px;
-    margin-top: 30px;
-    margin-left: 250px;
     width: 300px;
 }
 .level3{
-    background-color: var(--top-background-color);
-    height: 30px;
-    width: 1000px;
-    border-radius: 16px;
-    margin-top: 30px;
-    margin-left: 250px;
     width: 400px;
 }
 .level4{
-    background-color: var(--top-background-color);
-    height: 30px;
-    width: 1000px;
-    border-radius: 16px;
-    margin-top: 30px;
-    margin-left: 250px;
     width: 200px;
 }
 .level5{
-    background-color: var(--top-background-color);
-    height: 30px;
-    width: 1000px;
-    border-radius: 16px;
-    margin-top: 30px;
-    margin-left: 250px;
     width: 450px;
 }
 
@@ -229,10 +307,13 @@ header {
 .h3-5{
     margin-left: 550px;
 }
-
+.level-list h3{
+    color: var(--text-color1);
+}
 h2{
     text-align:center;
     font-size: 28px;
+    color: var(--text-color1);
 }
 /*------------------------------------*/
 .examples{
@@ -301,10 +382,16 @@ h2{
 }
 /*------------------------------------*/
 .contacts{
-    background-image: url('images/back3.png');
+    background-image: url('images/back3.jpg');
     background-size: 100%;
-    background-repeat: no-repeat;
     padding-bottom: 106px;
+    background-repeat: no-repeat;
+}
+.contacts.alt-back3{
+    background-image: url('images/back3_2.jpg');
+}
+.contacts.back3{
+    background-image: url('images/back3.jpg');
 }
 .contacts-info{
     display: flex;
@@ -333,7 +420,8 @@ h2{
 }
 .email{
     margin-left: 100px;
-    background-color: var(--top-background-color);
+    background-color: var(--dark);
+    color: white;
 }
 .facebook{
     margin-top: -40px;
@@ -342,7 +430,8 @@ h2{
 .phone{
     margin-left: 700px;
     margin-top: 40px;
-    background-color: var(--top-background-color);
+    background-color: var(--dark);
+    color: white;
 }
 .instagram{
     margin-left: 210px;
@@ -371,6 +460,7 @@ footer p{
     text-align: right;
     margin-right: 100px;
     font-weight: 450;
+    color: var(--text-color1);
 }
 #topButton {
     display: none;
@@ -378,13 +468,269 @@ footer p{
     bottom: 5px;
     right: 5px;
     background-color: var(--background-color);
-    color: var(--text-color1);
+    color: var(--red);
     padding: 10px;
-    border: none;
+    border:0;
     border-radius: 8px;
     cursor: pointer;
 }
 #topButton img{
     width: 25px;
     height: 20px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.nav-list.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    background-color: var(--top-background-color);
+    z-index: 2;
+}
+
+.nav-list.open li {
+    margin: 20px 0;
+}
+
+/*------------------ media queries ------------------*/
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 992px) {
+    body{
+        background-size: 200%; 
+        background-position: center top; 
+    }
+    body.alternative-images {
+        background-size: 200%; 
+        background-position: center top; 
+    }
+    body.main-images{
+        background-size: 200%; 
+        background-position: center top; 
+    }
+
+    .nav-list{
+        display: none;
+    }
+    header{
+        border-radius: 0 0 0 2.5em;
+        margin-left: 200px;
+        height: 60px;
+    }
+    .nav-toggle{
+        display: block;
+
+    }
+    .nav-list li{
+        font-size: 16px;
+        margin-left: 0;
+    }
+    #topButton {
+        border-radius: 1em;
+    }
+    .main{
+        font-size: 21px;
+        margin-top: 30%;
+        margin-left: 5%;
+        margin-bottom: 60%;
+    }
+    .hr-main{/*полосочка*/
+        width: 40%;
+        border: 1px solid var(--dark);
+        margin-top: -15em;
+        margin-bottom: 60%;
+        margin-left: 50%;
+    }
+    .info {
+        font-size: 14px;
+        border-radius: 2.5em;
+    }
+    .info p{
+        margin-left: 2em;
+    }
+    .myphoto {
+        height: 18em;
+        padding: 4em 5em;
+        position: relative;
+        z-index: 2;
+    }
+    .rectangle {
+        box-sizing: border-box;
+        height: 18em;
+        width: 14.5em;
+        border: 0.5px solid var(--background-color);
+        margin-top: -20em;
+        z-index: 1;
+    }
+    .dark-theme:last-of-type a{
+        margin-left: 1em
+    }
+    h2{
+        font-size: 18px;
+    }
+
+    .level-block{
+        padding-top: 3em;
+        padding-bottom: 10em;
+        background-size: cover;
+    }
+    .level1, .level2, .level3, .level4, .level5 {
+        height: 2em;
+        border-radius: 12px;
+        margin-left: 2.5em;
+        font-size: 12px;
+    }
+    .level2, .level3, .level4, .level5 {
+        margin-top: 2em;
+    }
+    .level1{
+        width: 18em;
+    }
+    .level2{
+        width: 8em;
+    }
+    .level3{
+        width: 15em;
+    }
+    .level4{
+        width: 11em;
+    }
+    .level5{
+        width: 16em;
+    }
+    .h3-1{
+        margin-left: 18em;
+    }
+    .h3-2{
+        margin-left: 8em;
+    }
+    .h3-3{
+        margin-left: 15em
+    }
+    .h3-4{
+        margin-left: 12em;
+    }
+    .h3-5{
+        margin-left: 16em;
+    }
+
+    .examples{
+        height: 100%;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    .display{
+        flex-direction: column;
+    }
+    .display1{
+        margin-top: 1em;
+        margin-left: 0em;
+    }
+    .display2{
+        margin-top: 1em;
+        margin-left: 0em;
+    }
+    .examp1{
+        width: 20em;
+        border-radius: 1.5em;
+    }
+    .examp2, .examp3, .examp4, .examp5, .examp6{
+        width: 20em;
+        border-radius: 1.5em;
+        margin-top: 1em;
+    }
+
+    .contacts{
+        padding-bottom: 10em;
+        background-size: cover;
+    }
+    .contacts.alt-back3,  .contacts.back3{
+        background-size: cover;
+    }
+
+    .contacts-info{
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+    }
+    .contacts h2{
+        padding-top: 3em;
+        margin-bottom: 2em;
+        padding-left: 3em;
+    }
+    
+    .contact-item{
+        border-radius: 1em;
+        font-size: 16px;
+        padding: 0 1em;
+        margin-top:0;
+    }
+    
+    .social-link img{
+        width: 3em;
+    }
+    .email{
+        margin-left: 1em;
+        margin-top: 2em;
+    }
+    .facebook{
+        margin-top: -4em;
+        margin-left: -4em;
+    }
+    .phone{
+        margin-left: 7em;
+        margin-top: 2em;
+    }
+    .instagram{
+        margin-left: 1.5em;
+        margin-top: 1em;
+        margin-right: 14em;
+    }
+    .telegram{
+        margin-left: 8em;
+        margin-top: -1em;
+    }
+
+
+    .hr-bottom{
+       border: 0.7px solid var(--text-color1);
+        width: 21em;
+        margin-top: 0;
+    }
+    .bottom1{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    footer img{
+        width: 0.7em;
+    }
+    footer p{
+        text-align: right;
+        margin-right: 5em;
+        font-weight: 450;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+   
 }
