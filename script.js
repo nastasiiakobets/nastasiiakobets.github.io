@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty('--text-color2', '#000000');
             root.style.setProperty('--dark', ' rgb(91, 30, 27)');
 
-            icon.src = 'images/icon_2.png';
+            icon.src = '/icon_2.png';
             body.classList.remove('main-images');
             body.classList.add('alternative-images');
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty('--text-color2', '#ffffff');
             root.style.setProperty('--dark', ' rgb(30, 30, 30)');
 
-            icon.src = 'images/icon.png';
+            icon.src = '/icon.png';
             body.classList.remove('alternative-images');
             body.classList.add('main-images');
 
