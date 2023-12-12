@@ -1,4 +1,4 @@
-@import url("fonts/Jost/stylesheet.css");
+@import url("/stylesheet.css");
 :root {
     --background-color: rgb(217, 217, 217);
     --top-background-color: rgb(30, 30, 30);
@@ -17,16 +17,16 @@ body{
     margin: 0;
     font-family: 'Jost', sans-serif;
     background-color: var(--background-color);
-    background-image: url('images/back1.jpg');
+    background-image: url('/back1.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
 body.alternative-images {
-    background-image: url('images/back1_2.jpg');
+    background-image: url('/back1_2.jpg');
     background-size: 100%;
 }
 body.main-images{
-    background-image: url('images/back1.jpg');
+    background-image: url('/back1.jpg');
     background-size: 100%;
 }
 a{
@@ -250,15 +250,15 @@ header {
 .level-block{
     padding-top: 100px;
     padding-bottom: 300px;
-    background-image: url('images/back2.jpg');
+    background-image: url('/back2.jpg');
     background-size: cover;
 }
 .level-block.alt-back2{
-    background-image: url('images/back2_2.jpg');
+    background-image: url('/back2_2.jpg');
     background-size: cover;
 }
 .level-block.back2{
-    background-image: url('images/back2.jpg');
+    background-image: url('/back2.jpg');
     background-size: cover;
 }
 .level-list{
@@ -382,16 +382,16 @@ h2{
 }
 /*------------------------------------*/
 .contacts{
-    background-image: url('images/back3.jpg');
+    background-image: url('/back3.jpg');
     background-size: 100%;
     padding-bottom: 106px;
     background-repeat: no-repeat;
 }
 .contacts.alt-back3{
-    background-image: url('images/back3_2.jpg');
+    background-image: url('/back3_2.jpg');
 }
 .contacts.back3{
-    background-image: url('images/back3.jpg');
+    background-image: url('/back3.jpg');
 }
 .contacts-info{
     display: flex;
