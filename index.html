@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>Kobets Anastasiia</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="./style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body class="dark-theme">
         <header>
          <ul class="nav-list">
             <li>
@@ -22,12 +22,20 @@
                 <a class="nav-list-link" href="#section4">Contacts</a>
             </li>
             <li>
-                <a class="logo-link" href="">
-                    <img class="logo-img" src="/icon.png" alt="icon">
-                </a>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span>
+                </label>
             </li>
-         </ul>
+        </ul>
+        <a class="logo-link" href="">
+            <img id="icon" class="logo-img" src="images/icon.png" alt="icon">
+        </a>
+         <div class="nav-toggle" onclick="toggleNav()">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="burger-icon"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg>
+        </div>
         </header>
+        <div class="overlay" id="overlay" onclick="closeNav()"></div>
         <main>
             <div class="main">
                 <p>My name is <b>Anastasiia</b>,</p> 
@@ -36,9 +44,10 @@
             <hr class="hr-main">
         </main>
         <div class="info" id="section1">
-            <img class="myphoto" src="/myphoto.jpeg" alt="myphoto">
+         <div class="content">
+            <img class="myphoto" src="images/myphoto.jpeg" alt="myphoto">
             <div class="rectangle"></div>
-         <span>
+          <span class="info-span">
             <br>
             <p>I am <strong>Anastasiia Kobets</strong>, a student of group <b>331</b></p>
             <p>Faculty of Computer Sciences, Physics and Mathematics</p>
@@ -57,7 +66,8 @@
             <br>
             <p><b>I speak such languages as:</b> Ukrainian, English and</p>
             <p>Polish</p>
-         </span>
+          </span>
+         </div>
         </div>
         <div class="level-block" id="section2">
             <h2>The level of my knowledge</h2>
@@ -74,25 +84,25 @@
             <div  class="display">
                 <div class="display1">
                     <a href="">
-                        <img class="examp1" src="/examp1.png" alt="examp1">
+                        <img class="examp1" src="images/examp1.png" alt="examp1">
                     </a>
                     <a href="https://www.figma.com/file/YI2yv0ikbmcNwhUwXVJm8W/sheakerSar?type=design&node-id=4%3A45&mode=design&t=TrGVO6PnN7udjVfP-1">
-                        <img class="examp2" src="/examp2.png" alt="examp2">
+                        <img class="examp2" src="images/examp2.png" alt="examp2">
                     </a>
                 </div>
                 <div class="display2">
                     <a href="https://www.figma.com/file/YI2yv0ikbmcNwhUwXVJm8W/%D0%B4%D0%B72?type=design&node-id=0%3A1&mode=design&t=KxHJtWMZFlCWYKTl-1">
-                        <img class="examp3" src="/examp3.png" alt="examp3">
+                        <img class="examp3" src="images/examp3.png" alt="examp3">
                     </a>
                     <a href="https://8bac19.axshare.com/#id=hl85nq&p=subcategories&sc=3&g=1">
-                        <img class="examp4" src="/examp4.png" alt="examp4">
+                        <img class="examp4" src="images/examp4.png" alt="examp4">
                     </a>
                 </div>
                 <a href="">
-                    <img class="examp5" src="/examp5.png" alt="examp5">
+                    <img class="examp5" src="images/examp5.png" alt="examp5">
                 </a>
                 <a href="">
-                    <img class="examp6" src="/examp6.png" alt="examp6">
+                    <img class="examp6" src="images/examp6.png" alt="examp6">
                 </a>
             </div>
         </div>
@@ -103,29 +113,28 @@
                     <p>Email: anastasiamasu4636@gmail.com</p>
                 </div>
                 <a href="https://www.facebook.com/anastasia.may.5015" class="contact-item social-link">
-                    <img class="facebook" src="/facebook.png" alt="Facebook">
+                    <img  id="facebook" class="facebook" src="images/facebook.png" alt="Facebook">
                 </a>
                 <div class="contact-item phone">
                     <p>+380501234567</p>
                 </div>
                 <a href="https://www.instagram.com/nastasiiakobets/" class="contact-item social-link">
-                    <img class="instagram" src="/instagram.png" alt="Instagram">
+                    <img id="instagram" class="instagram" src="images/instagram.png" alt="Instagram">
                 </a>
                 <a href="https://t.me/kobetts" class="contact-item social-link">
-                    <img class="telegram" src="/telegram.png" alt="Telegram">
+                    <img id="telegram" class="telegram" src="images/telegram.png" alt="Telegram">
                 </a>
             </div>
         </div>
-        
         <footer>
             <hr class="hr-bottom">
             <div class="bottom1">
-                <img src="/c.png" alt="c">
+                <img id="c" src="images/c.png" alt="c">
                 <p>2023</p>
             </div>
         </footer>
         <div id="topButton" onclick="scrollToTop()">
-            <img src="/striloczka.png" alt="top">
+            <img id="striloczka"src="images/striloczka.png" alt="top">
         </div>
         <script src="script.js"></script>
     </body>
